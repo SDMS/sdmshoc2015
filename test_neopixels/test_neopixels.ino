@@ -15,15 +15,32 @@
 #define N_LEDS   8
  
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(N_LEDS, PIN, NEO_GRB + NEO_KHZ800);
- 
+
+int rgbColor[3] = {50, 0, 0};
+
 void setup() {
   strip.begin();
+  Serial.begin(9600);
 }
  
 void loop() {
-  chase(strip.Color(50, 0, 0)); // Red
-  chase(strip.Color(0, 50, 0)); // Green
-  chase(strip.Color(0, 0, 50)); // Blue
+  for(int decColor = 0; decColor < 3; decColor +=1) {
+    int incColor = decColor == 2? 0 : decColor + 1;
+    
+    for(int i = 0; i < 255; i +=1){
+      rgbColor[decColor] -= 1;
+      rgbColor[incColor] += 1;
+      chase(strip.Color(rgbColor[0], rgbColor[1], rgbColor[2]));
+      delay(100);
+    }
+    
+    Serial.print(rgbColor[0]);
+    Serial.print(" ");
+    Serial.print(rgbColor[1]);
+    Serial.print(" ");
+    Serial.println(rgbColor[2]);
+    
+  }
 }
  
 static void chase(uint32_t c) {
