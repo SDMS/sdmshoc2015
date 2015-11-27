@@ -25,7 +25,7 @@ HolidayTree::HolidayTree(int nStrands, int nLights){
 
 /*
   This function should be called in the setup() arduino function.
-  Brightness is a number between 0 and 255.
+  Brightness is a number between 1 and 10.
 */
 void HolidayTree::init(int brightness){
   if(numStrands > 13) {
@@ -34,7 +34,7 @@ void HolidayTree::init(int brightness){
   for(int i = 0; i < numStrands; i++){
     Serial.println(i);
     strand[i]->begin();
-    strand[i]->setBrightness(brightness);
+    strand[i]->setBrightness(brightness * 2.55);
   }
   show();
 }
