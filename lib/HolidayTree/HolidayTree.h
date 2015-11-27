@@ -1,4 +1,4 @@
-/*
+ /*
   HolidayTree.h - Library for Hour of Code NeoPixel Project.
   Created by Giselle Koo, November 2015.
 */
@@ -6,7 +6,7 @@
 #define HolidayTree_h
 
 #include "Arduino.h"
-#include "Adafruit_Neopixel.h"
+#include <Adafruit_NeoPixel.h>
 #include <vector>
 
 class HolidayTree
@@ -24,6 +24,6 @@ class HolidayTree
     std::vector<Adafruit_NeoPixel> strand;
     int numStrands;
     int numLights;
-}
+};
 
 #endif

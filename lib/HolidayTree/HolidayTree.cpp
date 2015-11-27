@@ -3,7 +3,8 @@
   Created by Giselle Koo, November 2015.
 */
 #include "Arduino.h"
-#include <Adafruit_Neopixel.h>
+#include <StandardCplusplus.h>
+#include <Adafruit_NeoPixel.h>
 #include <vector>
 #include "HolidayTree.h"
 

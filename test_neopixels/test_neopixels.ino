@@ -20,6 +20,8 @@ int rgbColor[3] = {50, 0, 0};
 
 void setup() {
   strip.begin();
+  strip.setBrightness(0.10*255);
+  strip.show();
   Serial.begin(9600);
 }
  
