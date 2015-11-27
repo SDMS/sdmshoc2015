@@ -21,7 +21,7 @@ class HolidayTree
     void test();
     void reset();
   private:
-    std::vector<Adafruit_NeoPixel> strand;
+    std::vector<Adafruit_NeoPixel *> strand;
     int numStrands;
     int numLights;
 };

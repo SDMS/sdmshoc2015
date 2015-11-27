@@ -17,13 +17,9 @@ HolidayTree::HolidayTree(int nStrands, int nLights){
   numLights = nLights;
   
   /* Create <numStrand> strands with <numLights> lights on each. */
-  if(numStrands > 13) {
-    Serial.print("[Warning] Arduino Uno only has 12 non-Serial Digital Pins (DP #2 - DP #13). You may use Analog Pins 0-6 as Digital Pins 14-19"); 
-  }
   strand.reserve(numStrands);
   for(int i = 0; i < numStrands; i++){
-    Adafruit_NeoPixel s = Adafruit_NeoPixel(nLights, i + 2, NEO_GRB + NEO_KHZ800);
-    strand.push_back(s);
+    strand.push_back(new Adafruit_NeoPixel(nLights, i + 2, NEO_GRB + NEO_KHZ800));
   }
 }
 
@@ -32,23 +28,25 @@ HolidayTree::HolidayTree(int nStrands, int nLights){
   Brightness is a number between 0 and 255.
 */
 void HolidayTree::init(int brightness){
+  if(numStrands > 13) {
+    Serial.println("[Warning] Arduino Uno only has 12 non-Serial Digital Pins (DP #2 - DP #13). You may use Analog Pins 0-6 as Digital Pins 14-19"); 
+  }
   for(int i = 0; i < numStrands; i++){
-    Adafruit_NeoPixel s = strand[i];
-    s.begin();
-    s.setBrightness(brightness);
+    Serial.println(i);
+    strand[i]->begin();
+    strand[i]->setBrightness(brightness);
   }
   show();
 }
 
 void HolidayTree::show(){
   for(int i = 0; i < numStrands; i++){
-    Adafruit_NeoPixel s = strand[i];
-    s.show();
+    strand[i]->show();
   }
 }
 
 void HolidayTree::setLightColor(int strandNum, int light, int red, int green, int blue){
-  strand[strandNum].setPixelColor(light, red, green, blue);
+  strand[strandNum]->setPixelColor(light, red, green, blue);
 }
 
 int HolidayTree::getNumStrands(){

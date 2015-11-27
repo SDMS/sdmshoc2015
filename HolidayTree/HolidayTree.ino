@@ -8,13 +8,13 @@
 HolidayTree tree = HolidayTree(16, 8);
 
 void setup() {
-  tree.init(64);
   Serial.begin(9600);
+  Serial.println("Hello World");
+  tree.init(.05*255);
 }
  
 void loop() {
   tree.test();
-  Serial.println("blah");
   delay(250);
   tree.reset();
   delay(250);
