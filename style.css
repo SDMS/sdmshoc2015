@@ -1,0 +1,9 @@
+#header {
+	text-align: center;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 30px;
+}
+h1 {
+	font-size: 100px;
+	-webkit-margin-after: 0;
+}
