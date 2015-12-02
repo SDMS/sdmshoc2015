@@ -49,6 +49,26 @@ void HolidayTree::setLightColor(int strandNum, int light, int red, int green, in
   strand[strandNum]->setPixelColor(light, red, green, blue);
 }
 
+void HolidayTree::setLightColor(int strandNum, int light, Color c) {
+  strand[strandNum]->setPixelColor(light, c);
+}
+
+void HolidayTree::setRowColor(int rowNum, int red, int green, int blue) {
+  //CODE ME
+}
+
+void HolidayTree::setRowColor(int rowNum, Color c) {
+  //CODE ME
+}
+
+void HolidayTree::setColumnColor(int colNum, int red, int green, int blue) {
+  //CODE ME
+}
+
+void HolidayTree::setColumnColor(int colNum, Color c){
+  //CODE ME
+}
+
 int HolidayTree::getNumStrands(){
   return numStrands;
 }
