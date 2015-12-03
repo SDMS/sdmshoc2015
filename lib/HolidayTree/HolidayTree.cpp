@@ -36,7 +36,7 @@ void HolidayTree::init(int brightness){
     strand[i]->begin();
     strand[i]->setBrightness(brightness * 2.55);
   }
-  show();
+  show(500);
 }
 
 void HolidayTree::show(int ms){
@@ -97,7 +97,6 @@ void HolidayTree::test(){
       setLightColor(i, j, 255, 0, 0);
     }
   }
-  show();
 }
 /* turns all lights off*/
 void HolidayTree::reset(){
@@ -106,5 +105,4 @@ void HolidayTree::reset(){
       setLightColor(i, j, 0, 0, 0);
     }
   }
-  show();
 }
