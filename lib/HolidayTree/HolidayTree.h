@@ -9,7 +9,7 @@
 #include <Adafruit_NeoPixel.h>
 #include <vector>
 
-enum ColorEnum { 
+enum COLORS { 
   RED = 0b111111110000000000000000,
   ORANGE = 0b111111111000000000000000,
   YELLOW = 0b111111111111111100000000,
@@ -18,10 +18,9 @@ enum ColorEnum {
   BLUE = 0b000000000000000011111111,
   PURPLE = 0b100000000000000011111111,
   MAGENTA = 0b111111110000000011111111,
-  WHITE = 0b111111111111111111111111
-}
-
-typedef enum ColorEnum Color;
+  WHITE = 0b111111111111111111111111,
+  OFF = 0b000000000000000000000000
+};
 
 class HolidayTree
 {
@@ -29,14 +28,15 @@ class HolidayTree
     HolidayTree(int nStrands, int nLights);
     void init(int brightness);
     void setLightColor(int strandNum, int light, int red, int green, int blue);
-    void setLightColor(int strandNum, int light, Color c);
+    void setLightColor(int strandNum, int light, COLORS c);
     void setRowColor(int rowNum, int red, int green, int blue);
-    void setRowColor(int rowNum, Color c);
+    void setRowColor(int rowNum, COLORS c);
     void setColumnColor(int colNum, int red, int green, int blue);
-    void setColumnColor(int colNum, Color c);
+    void setColumnColor(int colNum, COLORS c);
     int getNumStrands();
     int getNumLights();
     void show();
+    void show(int ms);
     void test();
     void reset();
   private:

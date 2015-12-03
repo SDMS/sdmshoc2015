@@ -39,6 +39,13 @@ void HolidayTree::init(int brightness){
   show();
 }
 
+void HolidayTree::show(int ms){
+  for(int i = 0; i < numStrands; i++){
+    strand[i]->show();
+    delay(ms);
+  }
+}
+
 void HolidayTree::show(){
   for(int i = 0; i < numStrands; i++){
     strand[i]->show();
@@ -49,24 +56,36 @@ void HolidayTree::setLightColor(int strandNum, int light, int red, int green, in
   strand[strandNum]->setPixelColor(light, red, green, blue);
 }
 
-void HolidayTree::setLightColor(int strandNum, int light, Color c) {
+void HolidayTree::setLightColor(int strandNum, int light, COLORS c) {
   strand[strandNum]->setPixelColor(light, c);
 }
 
 void HolidayTree::setRowColor(int rowNum, int red, int green, int blue) {
   //CODE ME
+  for(int i = 0; i < numStrands; i++){
+    setLightColor(i, rowNum, red, green, blue);
+  }
 }
 
-void HolidayTree::setRowColor(int rowNum, Color c) {
+void HolidayTree::setRowColor(int rowNum, COLORS c) {
   //CODE ME
+  for(int i = 0; i < numStrands; i++){
+    setLightColor(i, rowNum, c);
+  }
 }
 
 void HolidayTree::setColumnColor(int colNum, int red, int green, int blue) {
   //CODE ME
+  for(int i = 0; i < numStrands; i++){
+    setLightColor(colNum, i, red, green, blue);
+  }
 }
 
-void HolidayTree::setColumnColor(int colNum, Color c){
+void HolidayTree::setColumnColor(int colNum, COLORS c){
   //CODE ME
+  for(int i = 0; i < numStrands; i++){
+    setLightColor(colNum, i, c);
+  }
 }
 
 int HolidayTree::getNumStrands(){
