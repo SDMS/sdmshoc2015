@@ -35,7 +35,6 @@ class HolidayTree
     void setColumnColor(int colNum, COLORS c);
     int getNumStrands();
     int getNumLights();
-    void show();
     void show(int ms);
     void test();
     void reset();

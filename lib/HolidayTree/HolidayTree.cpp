@@ -46,12 +46,6 @@ void HolidayTree::show(int ms){
   }
 }
 
-void HolidayTree::show(){
-  for(int i = 0; i < numStrands; i++){
-    strand[i]->show();
-  }
-}
-
 void HolidayTree::setLightColor(int strandNum, int light, int red, int green, int blue){
   strand[strandNum]->setPixelColor(light, red, green, blue);
 }
