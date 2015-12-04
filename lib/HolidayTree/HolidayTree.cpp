@@ -42,8 +42,8 @@ void HolidayTree::init(int brightness){
 void HolidayTree::show(int ms){
   for(int i = 0; i < numStrands; i++){
     strand[i]->show();
-    delay(ms);
   }
+  delay(ms);
 }
 
 void HolidayTree::setLightColor(int strandNum, int light, int red, int green, int blue){
