@@ -76,13 +76,17 @@ h2 {
   background:url('./img/logo_tall_frozen.jpg') no-repeat;
 }
 
+#starwars {
+  background:url('./img/logo_tall_starwars.jpg') no-repeat;
+}
+
 /* Try More */
 #dress {
   background:url('./img/dress.jpg') no-repeat;
 }
 
-#starwars {
-  background:url('./img/logo_tall_starwars.jpg') no-repeat;
+#bubble-name {
+  background: url('./img/codecademy.jpg') no-repeat;
 }
 
 #about-me-website {
@@ -95,6 +99,10 @@ h2 {
 
 #light-bot {
   background: url('./img/light_bot.png') no-repeat;
+}
+
+#java {
+  background: url('./img/java-oracle.png') no-repeat;
 }
 
 /* I want a challenge */
