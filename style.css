@@ -40,6 +40,15 @@ h2 {
   -webkit-margin-after: 0;
 }
 
+.morespace li:after {
+  content: "\a\a";
+  white-space: pre;
+}
+
+.morespace li li:after {
+  content: "";
+}
+
 /* This styles anything with class="category" */
 .category {
   clear: both;

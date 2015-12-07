@@ -43,36 +43,80 @@
   <a id="holiday-lights" class="activity" href="./holiday-lights.html">Holiday Lights</a>
   <h2>Light patterns with Arduino!</h2> 
 
-  In this activity, you will create different patterns of colors using the power of Arduino. This Christmas tree has 16 strands of light, each with 8 special LEDs called "NeoPixels."<br><br>
+  In this activity, you will create different patterns of colors using the power of Arduino. This Christmas tree has 16 strands of light, each with 8 special LEDs called "NeoPixels." Sounds like fun? Let's get started!<br><br>
+
+  <p>Ask Ms. Koo or Mrs. Marshall for a laptop to begin!</p>
+
+  <h3>Setting up Terminal</h3>
+  <ol class="morespace">
+    <li>Use Spotlight Search to open <b>"Terminal"</b></li>
+    <li>Type <b>"cd Desktop/s"</b>, then press tab, then enter.</li>
+    <li>Type <b>"git checkout -b"</b>, then space, then your first name and last initial as one word, then the word <b>"master"</b>. For example: <b>"git checkout -b SarahP master"</b> Then press enter.</li>
+    <li>Finally type <b>"git push --set-upstream origin"</b>, then your first name and last initial. For example: <b>"git push --set-upstream origin SarahP"</b></li>
+    <li>Minimize the Terminal so that we can use it again later.</li>
+  </ol>
+
+  <h3>Open Arduino</h3>
+  <ol class="morespace">
+    <li>Use Spotlight Search to open <b>"Arduino"</b></li>
+    <li>Hit <b>Command+O</b> and find a file called <b>HolidayTree.ino</b>. It is in the folder <b>sdmshoc2015/HolidayTree</b> on the Desktop. Double-click to open it.</li>
+  <img src="./img/arduino_setup.png" style="float:right">
+    <li>Underneath the block of code called <b>"setup()"</b> we are going to create your own function. This is where you are going to write all your code!<br><br>Make sure your cursor is all the way past the final curly bracket (<b>}</b>) before typing:<br><b>
+      void NAME(){
+      <br><br>
+    }</b><br>
+    Replace NAME with your first name and last initial (same as what we used earlier).
+    <li>Before we start coding, we have to tell the computer to run your function. Add a call to the function INSIDE the <b>"setup()"</b> block by adding:
+      <ul>
+        <li>The name of your function</li>
+        <li>Two parentheses</li>
+        <li>And a semicolon (<b>;</b>)</li>
+      </ul>
+      AFTER <b>tree.init(10);</b> but before the final curly bracket (<b>}</b>). Your code should look similar to the example in the picture.
+  </ol>
+
+  <h3>Testing your code</h3>
+  <ol class="morespace">
+    <li>First, click "Verify" - that's the checkmark button in the top left corner of the window. This is like the "Spell-Check" of programming. If you see orange text, that means there's an error! Try to figure out what the problem is (usually, we're missing a semicolon or curly brace somewhere...) or call a teacher over for help.</li>
+    <li>If everything checks out, Arduino will tell you how much memory your program used in white text. This means you can send the program to the server. 
+      <ul>
+        <li>Open the terminal</li>
+        <li>Type <b>git commit -a -m "Uploading Code"</b>, then press Enter.</li>
+        <li>Type <b>git push</b> and press Enter. It will ask you for a username and password. Ms. Koo or Mrs. Marshall will give you the username and password to use!</li>
+        <li>Now, ask a teacher to upload the code to the tree and see what it does!</li>
+      </ul>
+  </ol>
 
   <h2>API</h2>
+  API stands for "Application Program Interface." APIs explain what a piece of code can do and how you can use it to make your own programs.
+
   <h3>Class: Holiday Tree</h3>
-  <ul>
-    <li>HolidayTree(int nStrands, int nLights)</li>
-    <li>init(int brightness)</li>
-    <li>setLightColor(int strandNum, int light, Color color)</li>
-    <li>setLightColor(int strandNum, int light, int red, int green, int blue)</li>
-    <li>setRowColor(int rowNum, Color color) </li>
-    <li>setRowColor(int rowNum, int red, int green, int blue) </li>
-    <li>setColumnColor(int colNum, Color color) </li>
-    <li>setColumnColor(int colNum, int red, int green, int blue) </li>
-    <li>show()</li>
-    <li>reset()</li>
-    <li>getNumStrands()</li>
-    <li>getNumLights()</li>
+  <ul class="morespace">
+    <li><b>HolidayTree(int nStrands, int nLights):</b><br> This creates an instance of the HolidayTree, telling the computer how many strands of lights there are, and how many lights are on each strand.</li>
+    <li><b>init(int brightness):</b><br> Sets initial values and takes care of behind-the-scenes setup for the entire tree.</li>
+    <li><b>setLightColor(int strandNum, int light, Color color):</b><br> Allows the user to set the color of a single light. Give the "X" coordinate (which strand it's on) and the "Y" coordinate (which light on the strand). Use Enum: Color for a list of colors that can be used. Must call show(int ms) for this to have an effect.</li>
+    <li><b>setLightColor(int strandNum, int light, int red, int green, int blue):</b><br> Same as above, but colors are represented by R, G, and B values which can be any number between 0 (off) and 255 (max). <a href="https://www.rgbworld.com/color.html">Read More...</a></li>
+    <li><b>setRowColor(int rowNum, Color color):</b><br> Sets an entire row (horizontal) to be one color. Give the "Y" coordinate of the row and the color (see Enum: Color). Must call show(int ms) for this to have an effect.</li>
+    <li><b>setRowColor(int rowNum, int red, int green, int blue):</b><br> Same as above, but with R, G, and B values. </li>
+    <li><b>setColumnColor(int colNum, Color color):</b><br> Sets an entire column (vertical) to be one color. Give the "X" coordinate of the row and the color (see Enum: Color). Must call show(int ms) for this to have an effect.</li>
+    <li><b>setColumnColor(int colNum, int red, int green, int blue):</b><br> Same as above, but with R, G, and B values. </li>
+    <li><b>show(int ms):</b><br> Sends the values to the lights. Pauses for given amount of time in miliseconds before executing next command.</li>
+    <li><b>reset():</b><br> Turns all lights on the tree off. Must call show(int ms) for this to have an effect.</li>
+    <li><b>getNumStrands():</b><br> Returns the number of strands that are on the tree as an integer.</li>
+    <li><b>getNumLights():</b><br> Returns the number of lights per strand that are on the tree as an integer.</li>
   </ul>
 
   <h3>Enum: Color</h3>
   <ul id="colors">
-    <li id="red">Red</li>
-    <li id="orange">Orange</li>
-    <li id="yellow">Yellow</li>
-    <li id="green">Green</li>
-    <li id="cyan">Cyan</li>
-    <li id="blue">Blue</li>
-    <li id="purple">Purple</li>
-    <li id="magenta">Magenta</li>
-    <li id="white">White</li>
+    <li id="red">RED</li>
+    <li id="orange">ORANGE</li>
+    <li id="yellow">YELLOW</li>
+    <li id="green">GREEN</li>
+    <li id="cyan">CYAN</li>
+    <li id="blue">BLUE</li>
+    <li id="purple">PURPLE</li>
+    <li id="magenta">MAGENTA</li>
+    <li id="white">WHITE</li>
   </ul>
 </body>
 </html>
