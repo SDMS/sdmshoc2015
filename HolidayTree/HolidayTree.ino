@@ -11,9 +11,7 @@ void loop(){}
 void setup() {
   Serial.begin(9600);
   tree.init(10);
-  while(true){
-    elisa();
-  }
+  elisa();
 }
 
 void elisa(){
