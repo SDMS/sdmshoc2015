@@ -11,4 +11,12 @@ void loop(){}
 void setup() {
   Serial.begin(9600);
   tree.init(10);
+  jadam();
 }
+
+
+void jadam(){
+ tree.setRowColor(7, CYAN);
+ tree.show(500);
+}
+
