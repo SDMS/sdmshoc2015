@@ -14,7 +14,8 @@ void setup() {
   lynnlb();
 }
 void lynnlb() {
-  tree.setRowColor(4,MAGENTA);
+  tree.setRowColor(6,MAGENTA);
+  tree.setRowColor(5,PURPLE);
   tree.show(500);
   
   }
