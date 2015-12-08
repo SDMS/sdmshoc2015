@@ -18,6 +18,9 @@ void zeynabmn(){
 
   tree.setRowColor(4,GREEN);
   tree.show(500);
+  tree.setRowColor(4,GREEN);
+  tree.show(500);
+  
   
 }
 
