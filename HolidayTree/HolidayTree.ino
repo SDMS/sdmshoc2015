@@ -17,6 +17,8 @@ void setup() {
 
 void jadam(){
  tree.setRowColor(7, CYAN);
+ tree.setRowColor(1, BLUE);
+ tree.setRowColor(2,BLUE);
  tree.show(500);
 }
 
