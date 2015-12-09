@@ -18,9 +18,44 @@ void setup() {
 
 void Elisac(){
 
+ for(int i = 0; i < 8; i++){
+   tree.setLightColor(i + 1,  i, WHITE);
+ }
 
- tree.setLightColor(1,4, BLUE);
- tree.show(500); 
- git push
-}
+ for(int i = 0; i < 8; i++){
+   tree.setLightColor(i + 2,  i, RED);
+ }
+
+ for(int i = 0; i < 8; i++){
+  tree.setLightColor(i + 3,   i, YELLOW);
+ }
+  for(int i = 0; i < 8; i++){
+  tree.setLightColor(i + 4,   i, GREEN);
+  }
+    for(int i = 0; i < 8; i++){
+  tree.setLightColor(i + 5,   i, CYAN);
+    }
+    
+    for(int i = 0; i < 8; i++){
+  tree.setLightColor(i + 6,   i, BLUE);
+    }
+    
+    for(int i = 0; i < 8; i++){
+  tree.setLightColor(i + 7,   i, MAGENTA);
+    }
+
+    Set_diagonal(WHITE);
+    tree.show(500);
+    Set_diagonal(RED);
+    tree.show(500);
+
+ }
+
+void Set_diagonal(COLORS c){
+
+ for(int i = 0; i < 8; i++){
+  tree.setLightColor(i + 8,   i, c); 
+  }
+    
+ }
 
