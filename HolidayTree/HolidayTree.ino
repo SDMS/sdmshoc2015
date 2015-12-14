@@ -12,3 +12,13 @@ void setup() {
   Serial.begin(9600);
   tree.init(10);
 }
+
+
+
+
+void AzzanYancey(){
+
+  tree.setRowColor(5,BLUE);
+  tree.show(500);
+}
+
