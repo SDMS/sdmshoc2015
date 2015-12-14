@@ -47,12 +47,13 @@
 
   <p>Ask Ms. Koo or Mrs. Marshall for a laptop to begin!</p>
 
-  <h3>Setting up Terminal</h3>
+  <h3>One-time setup:</h3>
   <ol class="morespace">
     <li>Use Spotlight Search to open <b>"Terminal"</b></li>
-    <li>Type <b>"cd Desktop/s"</b>, then press tab, then enter.</li>
-    <li>Type <b>"git checkout -b"</b>, then space, then your first name and last initial as one word, then the word <b>"master"</b>. For example: <b>"git checkout -b SarahP master"</b> Then press enter.</li>
-    <li>Finally type <b>"git push --set-upstream origin"</b>, then your first name and last initial. For example: <b>"git push --set-upstream origin SarahP"</b></li>
+    <li>Type <b>cd Desktop/sdmshoc2015</b>, then press enter.</li>
+    <li>Type <b>git checkout -b YourName master</b>, replacing <b>YourName</b> with your first name and last initial (one word). Then press enter.</li>
+    <li>Finally, type <b>git push --set-upstream origin YourName</b>, again replacing YourName with what you used in step 3. Press enter.</li>
+    <li>It may ask you for a username and password at this point. Ask a teacher for the credentials.
     <li>Minimize the Terminal so that we can use it again later.</li>
   </ol>
 
@@ -60,19 +61,20 @@
   <ol class="morespace">
     <li>Use Spotlight Search to open <b>"Arduino"</b></li>
     <li>Hit <b>Command+O</b> and find a file called <b>HolidayTree.ino</b>. It is in the folder <b>sdmshoc2015/HolidayTree</b> on the Desktop. Double-click to open it.</li>
-  <img src="./img/arduino_setup.png" style="float:right">
+
     <li>Underneath the block of code called <b>"setup()"</b> we are going to create your own function. This is where you are going to write all your code!<br><br>Make sure your cursor is all the way past the final curly bracket (<b>}</b>) before typing:<br><b>
       void NAME(){
-      <br><br>
-    }</b><br>
+      <br>// code below this line<br><br>
+      <br>// code above this line<br>
+      }</b><br>
     Replace NAME with your first name and last initial (same as what we used earlier).
-    <li>Before we start coding, we have to tell the computer to run your function. Add a call to the function INSIDE the <b>"setup()"</b> block by adding:
+    <li>Before we start coding, we have to tell the Arduino to run your function. Add a call to the function INSIDE the <b>"setup()"</b> block by adding:
       <ul>
         <li>The name of your function</li>
         <li>Two parentheses</li>
         <li>And a semicolon (<b>;</b>)</li>
       </ul>
-      AFTER <b>tree.init(10);</b> but before the final curly bracket (<b>}</b>). Your code should look similar to the example in the picture.
+      AFTER <b>tree.init(10);</b> but before the final curly bracket (<b>}</b>).
   </ol>
 
   <h3>Testing your code</h3>
@@ -81,8 +83,8 @@
     <li>If everything checks out, Arduino will tell you how much memory your program used in white text. This means you can send the program to the server. 
       <ul>
         <li>Open the terminal</li>
-        <li>Type <b>git commit -a -m "Uploading Code"</b>, then press Enter.</li>
-        <li>Type <b>git push</b> and press Enter. It will ask you for a username and password. Ms. Koo or Mrs. Marshall will give you the username and password to use!</li>
+        <li>Type <b>git commit -a -m "code"</b>, then press Enter.</li>
+        <li>Type <b>git push</b> and press Enter.</li>
         <li>Now, ask a teacher to upload the code to the tree and see what it does!</li>
       </ul>
   </ol>
@@ -92,18 +94,18 @@
 
   <h3>Class: Holiday Tree</h3>
   <ul class="morespace">
-    <li><b>HolidayTree(int nStrands, int nLights):</b><br> This creates an instance of the HolidayTree, telling the computer how many strands of lights there are, and how many lights are on each strand.</li>
-    <li><b>init(int brightness):</b><br> Sets initial values and takes care of behind-the-scenes setup for the entire tree.</li>
-    <li><b>setLightColor(int strandNum, int light, Color color):</b><br> Allows the user to set the color of a single light. Give the "X" coordinate (which strand it's on) and the "Y" coordinate (which light on the strand). Use Enum: Color for a list of colors that can be used. Must call show(int ms) for this to have an effect.</li>
-    <li><b>setLightColor(int strandNum, int light, int red, int green, int blue):</b><br> Same as above, but colors are represented by R, G, and B values which can be any number between 0 (off) and 255 (max). <a href="https://www.rgbworld.com/color.html">Read More...</a></li>
-    <li><b>setRowColor(int rowNum, Color color):</b><br> Sets an entire row (horizontal) to be one color. Give the "Y" coordinate of the row and the color (see Enum: Color). Must call show(int ms) for this to have an effect.</li>
-    <li><b>setRowColor(int rowNum, int red, int green, int blue):</b><br> Same as above, but with R, G, and B values. </li>
-    <li><b>setColumnColor(int colNum, Color color):</b><br> Sets an entire column (vertical) to be one color. Give the "X" coordinate of the row and the color (see Enum: Color). Must call show(int ms) for this to have an effect.</li>
-    <li><b>setColumnColor(int colNum, int red, int green, int blue):</b><br> Same as above, but with R, G, and B values. </li>
-    <li><b>show(int ms):</b><br> Sends the values to the lights. Pauses for given amount of time in miliseconds before executing next command.</li>
-    <li><b>reset():</b><br> Turns all lights on the tree off. Must call show(int ms) for this to have an effect.</li>
-    <li><b>getNumStrands():</b><br> Returns the number of strands that are on the tree as an integer.</li>
-    <li><b>getNumLights():</b><br> Returns the number of lights per strand that are on the tree as an integer.</li>
+    <li><b>HolidayTree(numStrands, numLights):</b><br> This creates an instance of the HolidayTree, telling the computer how many strands of lights there are, and how many lights are on each strand.</li>
+    <li><b>tree.init(brightness):</b><br> Sets initial values and takes care of behind-the-scenes setup for the entire tree.<br><i>tree.init(10);</i></li>
+    <li><b>tree.setLightColor(strandNum, light, color):</b><br> Allows the user to set the color of a single light. Give the "X" coordinate (which strand it's on) and the "Y" coordinate (which light on the strand). Use Enum: Color for a list of colors that can be used. HINTS: Always start counting at zero! Also, don't forget show(ms).</li>
+    <li><b>tree.setLightColor(strandNum, light, red, green, blue):</b><br> Same as above, but colors are represented by R, G, and B values which can be any number between 0 (off) and 255 (max). <a href="https://www.rgbworld.com/color.html">Read More...</a></li>
+    <li><b>tree.setRowColor(rowNum, color):</b><br> Sets an entire row (horizontal) to be one color. Give the "Y" coordinate of the row and the color (see Enum: Color). Must call show(ms) for this to have an effect.</li>
+    <li><b>tree.setRowColor(rowNum, red, green, blue):</b><br> Same as above, but with R, G, and B values. </li>
+    <li><b>tree.setColumnColor(colNum, Color color):</b><br> Sets an entire column (vertical) to be one color. Give the "X" coordinate of the row and the color (see Enum: Color). Must call show(ms) for this to have an effect.</li>
+    <li><b>tree.setColumnColor(colNum, red, green, blue):</b><br> Same as above, but with R, G, and B values. </li>
+    <li><b>tree.show(ms):</b><br> Sends the values to the lights. Pauses for given amount of time in miliseconds before executing next command.</li>
+    <li><b>tree.reset():</b><br> Turns all lights on the tree off. Must call show(ms) for this to have an effect.</li>
+    <li><b>tree.getNumStrands():</b><br> Returns the number of strands that are on the tree as an integer.</li>
+    <li><b>tree.getNumLights():</b><br> Returns the number of lights per strand that are on the tree as an integer.</li>
   </ul>
 
   <h3>Enum: Color</h3>

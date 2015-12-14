@@ -40,6 +40,8 @@ h2 {
   -webkit-margin-after: 0;
 }
 
+/* These style bulleted lists that appear on sub pages*/
+
 .morespace li:after {
   content: "\a\a";
   white-space: pre;
