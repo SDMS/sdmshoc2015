@@ -112,18 +112,19 @@ h2 {
   background: url('./img/light_bot.png') no-repeat;
 }
 
-#codeavengers {
-  background: url('./img/codeavengers.png') no-repeat;
+#inside-out {
+  background: url('./img/inside-out.png') no-repeat;
 }
 
 #java {
   background: url('./img/java-oracle.png') no-repeat;
 }
 
-/* I want a challenge */
 #gottacode {
   background:url('./img/gottacode.jpg') no-repeat;
 }
+
+/* I want a challenge */
 
 #flappy-bird {
   background:url('./img/flappy.jpg') no-repeat;
@@ -141,3 +142,6 @@ h2 {
   background:url('./img/scratch.jpg') no-repeat;
 }
 
+#codeavengers {
+  background: url('./img/codeavengers.png') no-repeat;
+}
