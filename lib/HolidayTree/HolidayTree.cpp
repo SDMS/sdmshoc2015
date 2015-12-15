@@ -3,9 +3,8 @@
   Created by Giselle Koo, November 2015.
 */
 #include "Arduino.h"
-#include <StandardCplusplus.h>
+
 #include <Adafruit_NeoPixel.h>
-#include <vector>
 #include "HolidayTree.h"
 
 /* 
@@ -17,9 +16,10 @@ HolidayTree::HolidayTree(int nStrands, int nLights){
   numLights = nLights;
   
   /* Create <numStrand> strands with <numLights> lights on each. */
-  strand.reserve(numStrands);
+  strand = new Adafruit_NeoPixel* [nStrands];
+
   for(int i = 0; i < numStrands; i++){
-    strand.push_back(new Adafruit_NeoPixel(nLights, i + 2, NEO_GRB + NEO_KHZ800));
+    strand[i] = new Adafruit_NeoPixel(nLights, i + 2, NEO_GRB + NEO_KHZ800);
   }
 }
 

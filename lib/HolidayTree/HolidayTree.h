@@ -7,7 +7,6 @@
 
 #include "Arduino.h"
 #include <Adafruit_NeoPixel.h>
-#include <vector>
 
 enum COLORS { 
   RED = 0xFF0000,
@@ -39,7 +38,7 @@ class HolidayTree
     void test();
     void reset();
   private:
-    std::vector<Adafruit_NeoPixel *> strand;
+    Adafruit_NeoPixel** strand;
     int numStrands;
     int numLights;
 };
