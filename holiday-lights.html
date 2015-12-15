@@ -45,23 +45,24 @@
 
   In this activity, you will create different patterns of colors using the power of Arduino. This Christmas tree has 16 strands of light, each with 8 special LEDs called "NeoPixels." Sounds like fun? Let's get started!<br><br>
 
-  <p>Ask Ms. Koo or Mrs. Marshall for a laptop to begin!</p>
+  <p>Ask Ms. Koo or Mrs. Marshall for a Chromebook to begin!</p>
 
-  <h3>One-time setup:</h3>
+  <h3>Setup!</h3>
   <ol class="morespace">
-    <li>Use Spotlight Search to open <b>"Terminal"</b></li>
-    <li>Type <b>cd Desktop/sdmshoc2015</b>, then press enter.</li>
-    <li>Type <b>git checkout -b YourName master</b>, replacing <b>YourName</b> with your first name and last initial (one word). Then press enter.</li>
-    <li>Finally, type <b>git push --set-upstream origin YourName</b>, again replacing YourName with what you used in step 3. Press enter.</li>
-    <li>It may ask you for a username and password at this point. Ask a teacher for the credentials.
-    <li>Minimize the Terminal so that we can use it again later.</li>
+    <li>Sign into your Chromebook with the following email:</li>
+      <ul>
+        <li>Username: sdmsstudent01@wethersfield.me</li>
+        <li>Password: Student15</li>
+      </ul>
+    <li>Go to this website: <strong>www.codebender.cc/user/gkoo</strong></li>
+    <li>Click Log In at the top right corner, then click the red "Sign In with Google" button</li>
+    <li>Click on the "HolidayTree" project</li>
+    <li>Click on "Clone and Edit" towards the right side of the screen.</li>
+    <li>Click the green "Clone Sketch & libraries" button</li>
   </ol>
 
-  <h3>Open Arduino</h3>
+  <h3>Coding!</h3>
   <ol class="morespace">
-    <li>Use Spotlight Search to open <b>"Arduino"</b></li>
-    <li>Hit <b>Command+O</b> and find a file called <b>HolidayTree.ino</b>. It is in the folder <b>sdmshoc2015/HolidayTree</b> on the Desktop. Double-click to open it.</li>
-
     <li>Underneath the block of code called <b>"setup()"</b> we are going to create your own function. This is where you are going to write all your code!<br><br>Make sure your cursor is all the way past the final curly bracket (<b>}</b>) before typing:<br><b>
       void NAME(){
       <br>// code below this line<br><br>
@@ -75,18 +76,6 @@
         <li>And a semicolon (<b>;</b>)</li>
       </ul>
       AFTER <b>tree.init(10);</b> but before the final curly bracket (<b>}</b>).
-  </ol>
-
-  <h3>Testing your code</h3>
-  <ol class="morespace">
-    <li>First, click "Verify" - that's the checkmark button in the top left corner of the window. This is like the "Spell-Check" of programming. If you see orange text, that means there's an error! Try to figure out what the problem is (usually, we're missing a semicolon or curly brace somewhere...) or call a teacher over for help.</li>
-    <li>If everything checks out, Arduino will tell you how much memory your program used in white text. This means you can send the program to the server. 
-      <ul>
-        <li>Open the terminal</li>
-        <li>Type <b>git commit -a -m "code"</b>, then press Enter.</li>
-        <li>Type <b>git push</b> and press Enter.</li>
-        <li>Now, ask a teacher to upload the code to the tree and see what it does!</li>
-      </ul>
   </ol>
 
   <h2>API</h2>
