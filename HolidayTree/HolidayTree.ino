@@ -4,6 +4,10 @@
 HolidayTree tree = HolidayTree(16, 8);
 
 void loop(){
+	myPattern4();
+	myPattern4();
+	myPattern4();
+	myPattern4();
 	myPattern0();
 	myPattern0();
 	myPattern1();
@@ -368,4 +372,30 @@ void zeynabmn(){
   tree.show(500);
   
   
+}
+
+int hello = 1;
+
+void myPattern4() {
+
+  for(int i = 0; i < 8; i = i + 1) {
+    for(int j = 0; j < 16; j++){
+	    tree.setLightColor(j,i,100-i*12, 0+i*12, 0);
+    }
+    tree.show(250);
+  }
+  for(int i = 0; i < 8; i = i + 1) {
+    for(int j = 0; j < 16; j++){
+    	tree.setLightColor(j,i,0, 100-i*12, 0+i*12);
+    }
+    tree.show(250);
+  }
+  for(int i = 0; i < 8; i = i + 1) {
+    for(int j = 0; j < 16; j++){
+    	tree.setLightColor(j,i,0+i*12, 0, 100-i*12);
+    }
+    tree.show(250);
+  }
+  tree.reset();
+  tree.show(250);
 }
